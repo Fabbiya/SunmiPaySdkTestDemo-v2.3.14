@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/security_owf2_alg_test" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_mtmk_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MTMK index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="32">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_mtmk_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MTMK value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="32">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_tseed_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="TSEED value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_tmk_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="TMK index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_owf2_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/security_owf3_alg_test" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_kmdeb_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KMDEB index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="48">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_kmdeb_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KMDEB value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="32">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_csncan_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="CSNCAN value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_kidb_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KIDEB index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_owf3_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/security_gowf_alg_test" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_bseed_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="BSEED index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="48">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_bseed_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="BSEED value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gkmdeb_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="GKMDEB index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="48">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gkmdeb_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="GKMDEB value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_kmdeb_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KMDEB index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_gowf_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="generate session key" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_kideb_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KiDeb index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="48">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_kideb_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KiDeb value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="48">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_input_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="input data(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_session_key_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Session key index[0~199]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_gen_session_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

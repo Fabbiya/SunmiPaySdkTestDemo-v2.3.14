@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/get_sys_param"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/set_sys_param"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/buzzer"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/led"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/screen_mode"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/dynamic_perm_wifi_proxy"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/ca_cert_manager"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/cpu_info"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/schedule_reboot"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/customize_function_key"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/lmk_package"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/emv_callback_time"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/pin_anti_exhaustive_mode"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/sys_set_wakeup"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/kb_beep_mode"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/shard_lib"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/data_transmission"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/network_manage"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/phone_call_manage"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/device_manage"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/ped_test"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/liteso"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/rtc_info"
+                layout="@layout/common_item" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/security_key_type"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_key_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_kek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="@string/security_kek"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_tmk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_tmk"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_pik"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_pik"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_tdk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_tdk"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_mak"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_rec_key"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_rec_key"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4096">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_key_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="key value(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_key_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="key index"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_encrypt_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/security_decrypt_index"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/security_key_alg_type"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_key_alg_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_3des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="@string/security_alg_3des_or_des"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_sm4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_alg_sm4"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_aes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_alg_aes"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Padding mode"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_padding_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_mode_none"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="NOTHING_PADDING"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mode_pkcs1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="PKCS1"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mode_pkcs7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="PKCS7"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mode_pkcs5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="PKCS5"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mode_pkcs1_oaep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="PKCS1_OAEP"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Key System"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_key_system"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_mksk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="@string/security_key_system_mksk"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_rsa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_key_system_rsa_key"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Encrypt Key System"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_enc_key_system"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_mksk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="@string/security_key_system_mksk"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_rsa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_key_system_rsa_key"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/security_encrypt_type"
+                        android:textColor="@color/colorTextHelp"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_enc_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_mode_ecb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:checked="true"
+                            android:text="@string/security_data_mode_ecb"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_mode_cbc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_data_mode_cbc"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_mode_ofb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_data_mode_ofb"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb_enc_mode_cfb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="@string/security_data_mode_cfb"
+                            android:textColor="@color/colorTextContent"
+                            android:textSize="14sp"
+                            android:visibility="visible" />
+
+                    </RadioGroup>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_ok"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="16dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

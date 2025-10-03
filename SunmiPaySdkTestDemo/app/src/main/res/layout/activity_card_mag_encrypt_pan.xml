@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/card_magnetic" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="code(Hex)"
+                            android:text="1"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="type(Hex)"
+                            android:text="2"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_mask_start"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MaskStart(0-8)"
+                            android:text="3"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_mask_end"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MaskEnd(0-4)"
+                            android:text="4"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_mask_char"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="MaskChar"
+                            android:inputType="text"
+                            android:text="*"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemSize"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mb_total"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/card_total"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/transparent"
+                    app:cornerRadius="0dp"
+                    app:strokeColor="@color/colorLineColor"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mb_success"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/card_success"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/transparent"
+                    app:cornerRadius="0dp"
+                    app:strokeColor="@color/colorLineColor"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mb_fail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/card_fail"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/transparent"
+                    app:cornerRadius="0dp"
+                    app:strokeColor="@color/colorLineColor"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_track2"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_track2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_pan"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_pan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_service_code"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_service_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextContent"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_start_check_card"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/titleSize"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/card_start_check_card"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:backgroundTint="@color/colorOrange"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

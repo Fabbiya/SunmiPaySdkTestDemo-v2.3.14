@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biometric_register_feature" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="64">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_user_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/biometric_input_face_user_id"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_face_feature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789,."
+                            android:hint="@string/biometric_input_face_feature_data"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/btn_gen_register_feature_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="10dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="generate test face feature data"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/btn_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="10dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+
+                    <TextView
+                        android:id="@+id/txt_biometric_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biometric_delete_feature" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="64">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_deleted_user_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/biometric_input_face_user_id"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/btn_delete"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="10dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+
+                    <TextView
+                        android:id="@+id/txt_biometric_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biometric_search_feature" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_search_feature"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789,."
+                            android:hint="@string/biometric_input_face_feature_data"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_search_threshold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/biometric_search_threshold"
+                            android:inputType="number"
+                            android:digits="0123456789,."
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/btn_copy_search_feature_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="10dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="copy register face feature data"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                    <android.support.design.button.MaterialButton
+                        android:id="@+id/btn_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:layout_marginTop="10dp"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/ok"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+
+                    <TextView
+                        android:id="@+id/txt_biometric_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/device_cert_pvt_key_test"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/inject_device_cert_pvt_key"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/get_set_device_cert"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/hsm_get_device_cert"
+                layout="@layout/common_item"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/hsm_device_pvk_recover"
+                layout="@layout/common_item"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/hsm_device_cert_manager"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/hsm_rsa_keypair"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/hsm_rsa_recover"
+                layout="@layout/common_item"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/hsm_key_share"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/hsm_save_key_under_kek"
+                layout="@layout/common_item" />
+
+            <include
+                android:id="@+id/hsm_export_key_under_kek"
+                layout="@layout/common_item" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

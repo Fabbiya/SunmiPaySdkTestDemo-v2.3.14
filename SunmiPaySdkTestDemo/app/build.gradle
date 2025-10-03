@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk 33
+    ndkVersion "21.0.6113669"
+    lintOptions {
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+        disable 'NonConstantResourceId'
+    }
+
+    defaultConfig {
+        applicationId "com.sm.sdk.demo"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 242
+        versionName "v2.3.14"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'sunmi'
+            keyPassword 'SunmiPay'
+            storeFile file('sunmi.jks')
+            storePassword 'sunmipay'
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+        release {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.applicationVariants.all { variant ->
+        def defOutputDir = variant.getPackageApplicationProvider().get().outputDirectory.getAsFile().get().getPath()
+        def targetDir = "${project.buildDir}/outputs/apk"
+        variant.outputs.all {
+            outputFileName = "SunmiSDKTestDemo_${versionName}_libbase_${buildType.name}.apk"
+//            variant.assembleProvider.get().doLast {
+//                copy {
+//                    from defOutputDir
+//                    into targetDir
+//                    include "**/*.apk"
+//                }
+//                File dir = file("${targetDir}/${buildType.name}")
+//                delete dir
+//            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.sunmi:sunmiui:1.1.27'
+    implementation 'com.sunmi:printerlibrary:1.0.15'
+//    implementation 'com.sunmi:PayLib-release:2.0.07'
+}

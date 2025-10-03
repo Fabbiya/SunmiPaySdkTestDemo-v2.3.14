@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/security_key_type"
+                            android:textAllCaps="false" />
+
+                        <RadioGroup
+                            android:id="@+id/rdo_group_gen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdo_gen_key_type_normal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/hsm_rsa_key_type_normal"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_gen_key_type_kpk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kpk"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_gen_key_type_kek"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kek"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_pvt_key_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PrivateKeyIndex[0~9]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_pvt_key_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KeySize[1024/2048]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="6">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_gen_rsa_key_exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PubExponent[03/010001]"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_gen_key_pair"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/security_hsm_gen_key_pair"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/security_key_type"
+                            android:textAllCaps="false" />
+
+                        <RadioGroup
+                            android:id="@+id/rdo_group_inject_puk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_puk_key_type_normal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/hsm_rsa_key_type_normal"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_puk_key_type_kpk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kpk"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_puk_key_type_kek"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kek"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pub_key_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PublicKeyIndex[0~9]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pub_key_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KeySize[1024/2048]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1024">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pub_key_module"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Module(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="6">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pub_key_exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PubExponent[03/010001]"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_inject_pub_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/security_hsm_inject_rsa_pub_key"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/security_key_type"
+                            android:textAllCaps="false" />
+
+                        <RadioGroup
+                            android:id="@+id/rdo_group_inject_pvk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_pvk_key_type_normal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/hsm_rsa_key_type_normal"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_pvk_key_type_kpk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kpk"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+
+                            <RadioButton
+                                android:id="@+id/rdo_inject_pvk_key_type_kek"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hsm_rsa_key_type_kek"
+                                android:textColor="@color/colorTextContent"
+                                android:textSize="14sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="2">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pvt_key_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PrivateKeyIndex[0~9]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pvt_key_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="KeySize[1024/2048]"
+                            android:inputType="number"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1024">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pvt_key_module"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Module(HEX)"
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="1024">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_inject_pvt_key_exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="PvtExponent"
+                            android:inputType="text"
+                            android:textColor="@color/colorTextContent"
+                            android:textColorHint="@color/colorTextHelp"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_inject_pvt_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/titleSize"
+                        android:elevation="8dp"
+                        android:gravity="center"
+                        android:text="@string/security_hsm_inject_rsa_pvt_key"
+                        android:textAllCaps="false"
+                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:backgroundTint="@color/colorOrange"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

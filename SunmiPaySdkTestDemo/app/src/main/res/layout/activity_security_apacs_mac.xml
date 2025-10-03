@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleSize"
+        android:elevation="4dp"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/init_mac_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="init MAC key"
+                    android:inputType="text"
+                    android:text="3E67E5837643A19B"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/init_mac_key_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="init MAC key index"
+                    android:inputType="number"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mac_key_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="MAC key index"
+                    android:inputType="number"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pin_key_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="PIN key index"
+                    android:inputType="number"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ab_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="AB bock"
+                    android:text="0011300499982000"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="32">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/auth_param"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Auth param"
+                    android:text="841000FFFFFFFFFF"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="2048">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/request_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Request data"
+                    android:text="343334353230323131303030314634413233323030303030303030303032303435351c3939393939383230303030303131333030343d32353132323031303132333435363738391f30311c313030301c1c37301c1c323131313138313632361c32321c3832361c3832361c31301c4444393133353241433838393037443831433030303030313644353643423234383038303034383030303031303130413033413030303030313233341f41303030303030303239313031301f303030311f38301f3032303330301f464638301f4630303045433838303030303530343030303030463032304543393830301c31303132381e313430311d353545374232373644353042334535351d46464646464646393939303030423630303034341d1e303630311d3332333030301d3030303030301d4530343043381d1c"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="2048">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/response_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Response data"
+                    android:text="3433343532303231313030303131333030301c3030303032323530301f301c434153482057495448445241574e0a2331302e30301f7e434153482057495448445241574e7c7e20202020202331302e30307c7c5448414e4b20594f5520464f52205553494e477c202020205448495320534552564943451c1c1c3231313131383136323734381c1c3030303830301c30301e5a3130311d59525368456f45434d444341444441774d4441774d544d314d5463314e413d3d1c"
+                    android:textColor="@color/colorTextContent"
+                    android:textColorHint="@color/colorTextHelp"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_ok"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/titleSize"
+                android:layout_marginTop="16dp"
+                android:elevation="8dp"
+                android:gravity="center"
+                android:text="@string/ok"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:backgroundTint="@color/colorOrange"
+                app:cornerRadius="8dp" />
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/colorTextTitle"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
